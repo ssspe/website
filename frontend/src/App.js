@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import _ from 'lodash';
+import GitRepoButton from './components/GitRepoButton';
+import { Container } from 'reactstrap';
 
 class App extends Component {
   state = {
@@ -20,31 +23,34 @@ class App extends Component {
   }
 
   getDataFromDb = () => {
-    fetch("/api/getGitHubRepo2")
+    fetch("/api/getGitHubRepo")
       .then(data => data.json())
-      .then(res => this.setState({ data: JSON.parse(res.data) }));
+      .then(res => this.setState({ data: JSON.parse(res.data) }))
   };
+
+  renderRepos = (repo) => {
+    console.log(repo);
+    if (typeof repo !== 'undefined' ) {
+      return (
+        <GitRepoButton repo={repo} />
+      );
+    }
+  }
+
 
   render() {
     const { data } = this.state;
+    if (data.length > 0) {
+      console.log(data);
+    }
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          {data.length <= 0
-            ? "NO GITHUBS"
-            : <span> {data.message} </span>}
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Container>
+            { data.length <= 0
+              ? ''
+              : _.map(data, this.renderRepos) }
+            </Container>
         </header>
       </div>
     );
