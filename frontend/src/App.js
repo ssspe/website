@@ -46,11 +46,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Container>
             { data.length <= 0
               ? ''
               : _.map(data, this.renderRepos) }
-            </Container>
         </header>
       </div>
     );

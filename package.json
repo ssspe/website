@@ -12,7 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "concurrently \"cd backend && node server.js\" \"cd frontend && npm start\""
+    "start": "concurrently \"cd backend && node server.js\" \"cd frontend && npm start\"",
+    "build": "concurrently \"npm install\" \"cd backend && npm install\" \"cd frontend && npm install\""
   },
   "keywords": [],
   "author": "",

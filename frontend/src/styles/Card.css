@@ -1,0 +1,12 @@
+.github__card {
+  max-height: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  transition: transform .2s;
+}
+
+.github__card:hover {
+  transform: scale(1.01);
+}
