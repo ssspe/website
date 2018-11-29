@@ -10,3 +10,11 @@
 .github__card:hover {
   transform: scale(1.01);
 }
+
+.github__link {
+  color: black;
+  
+}
+.github__link:hover {
+   color: black;
+}

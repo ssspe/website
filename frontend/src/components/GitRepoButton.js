@@ -5,12 +5,13 @@ import { Container, Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Card.css';
 import { Link } from 'react-router-dom'
+import styled from 'styled-components';
 
 class GitRepoButton extends Component {
 
   render() {
     return (
-      <Link to='/roster'>
+      <Link to='/roster' className='github__link' style={{ textDecoration: 'none' }}>
       	<Card className="github__card">
       		<Row >
       			<Col xs="3">
