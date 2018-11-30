@@ -3,7 +3,7 @@ import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
 import { Container } from 'reactstrap';
 
-class GitRepos extends Component {
+class GitRepoList extends Component {
   state = {
     data: [],
     intervalIsSet: false
@@ -53,4 +53,4 @@ class GitRepos extends Component {
   }
 }
 
-export default GitRepos;
+export default GitRepoList;

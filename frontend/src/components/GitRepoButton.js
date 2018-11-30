@@ -11,7 +11,7 @@ class GitRepoButton extends Component {
 
   render() {
     return (
-      <Link to='/roster' className='github__link' style={{ textDecoration: 'none' }}>
+      <Link to={ '/gitrepos/' + this.props.repo.name } className='github__link' style={{ textDecoration: 'none' }}>
       	<Card className="github__card">
       		<Row >
       			<Col xs="3">
