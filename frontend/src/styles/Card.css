@@ -1,10 +1,28 @@
 .github__card {
   max-height: 300px;
+  min-height: 100px;
+  min-width: 90vw;
+  max-width: 95vw;
   margin-bottom: 20px;
   margin-top: 20px;
   margin-right: 40px;
   margin-left: 40px;
   transition: transform .2s;
+}
+
+.row {
+  min-width: 90vw;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .github__card:hover {
@@ -13,9 +31,10 @@
 }
 
 .github__link {
+  min-width: 100vh;
   color: black;
-
 }
+
 .github__link:hover {
    color: black;
 }

@@ -1,0 +1,27 @@
+.navbar,
+.navbar-default {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 5vh;
+    background-color: #282c34 !important;
+    vertical-align: middle;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-brand:hover {
+  color: LightGrey !important;
+}
+
+.nav__link {
+  color: white !important;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: LightGrey !important;
+  text-decoration: none;
+}
