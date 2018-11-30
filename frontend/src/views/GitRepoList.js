@@ -29,7 +29,6 @@ class GitRepoList extends Component {
   };
 
   renderRepos = (repo) => {
-    console.log(repo);
     if (typeof repo !== 'undefined' ) {
       return (
         <Animated animationIn="bounceInUp" animationOut="bounceOutDown" isVisible={this.state.isVisible}>
@@ -40,23 +39,18 @@ class GitRepoList extends Component {
   }
 
   setter = () => {
-    console.log("Hello");
     this.setState({ isVisible: false });
   }
 
   render() {
     const { data } = this.state;
-    if (data.length > 0) {
-      console.log(data);
-    }
+
     return (
       <div className="App">
         <header className="App-header">
-
             { data.length <= 0
               ? ''
               : _.map(data, this.renderRepos) }
-
         </header>
       </div>
     );

@@ -7,12 +7,9 @@
   transition: transform .2s;
 }
 
-.github__animation {
-  animation-duration: 3s;
-}
-
 .github__card:hover {
   transform: scale(1.01);
+  background-color: WhiteSmoke;
 }
 
 .github__link {
