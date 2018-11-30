@@ -18,7 +18,9 @@ class GitRepo extends Component {
   render() {
     return (
       <div className="App">
-        <span> Hello World! </span>
+        <header className="App-header">
+          <span> Hello World! </span>
+        </header>
       </div>
     );
   }

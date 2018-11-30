@@ -7,14 +7,30 @@
   transition: transform .2s;
 }
 
+.github__animation {
+  animation:
+    move 1s,
+    fade 1.5s;
+}
+
 .github__card:hover {
   transform: scale(1.01);
 }
 
 .github__link {
   color: black;
-  
+
 }
 .github__link:hover {
    color: black;
+}
+
+@keyframes move {
+  from { top: 100vh; left: 0; }
+  to   { top: 0; left: 0; }
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
