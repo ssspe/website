@@ -12,6 +12,10 @@ const api = require("./api");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use("/api", api);
+app.use("/api", api.router);
 
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+app.listen(API_PORT, function () {
+    // Once a day get the git repos
+    api.requestGitHubRepo();
+    setInterval(api.requestGitHubRepo, 86400000);
+});
