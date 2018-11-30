@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
 import { Container } from 'reactstrap';
+import {Animated} from "react-animated-css";
 
 class GitRepoList extends Component {
   state = {
     data: [],
-    intervalIsSet: false
+    intervalIsSet: false,
+    isVisible: true
   };
 
   // when component mounts, first thing it does is fetch all existing data in our db
@@ -30,11 +32,17 @@ class GitRepoList extends Component {
     console.log(repo);
     if (typeof repo !== 'undefined' ) {
       return (
-        <GitRepoButton repo={repo} />
+        <Animated animationIn="bounceInUp" animationOut="bounceOutDown" isVisible={this.state.isVisible}>
+          <GitRepoButton repo={repo} setter={this.setter}/>
+        </Animated>
       );
     }
   }
 
+  setter = () => {
+    console.log("Hello");
+    this.setState({ isVisible: false });
+  }
 
   render() {
     const { data } = this.state;
@@ -44,9 +52,11 @@ class GitRepoList extends Component {
     return (
       <div className="App">
         <header className="App-header">
+
             { data.length <= 0
               ? ''
               : _.map(data, this.renderRepos) }
+
         </header>
       </div>
     );
