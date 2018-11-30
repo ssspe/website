@@ -2,7 +2,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from '../views/Home.js'
 import GitRepoList from '../views/GitRepoList.js'
 import GitRepo from '../views/GitRepo.js'
-import React, { Component } from 'react';
+import React from 'react';
 
 const Router = () => (
   <main>

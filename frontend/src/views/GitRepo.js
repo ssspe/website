@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
-import GitRepoButton from '../components/GitRepoButton';
-import { Container } from 'reactstrap';
 import {Animated} from "react-animated-css";
 
 class GitRepo extends Component {
