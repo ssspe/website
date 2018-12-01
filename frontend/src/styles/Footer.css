@@ -1,0 +1,14 @@
+.footer {
+	background-color: #3e4451;
+	text-align: center;
+}
+
+.icons {
+	margin: 10px 10px 10px 10px;
+	filter: brightness(0%);
+	opacity: 0.3;
+}
+
+.icons:hover {
+	opacity: 0.4;
+}
