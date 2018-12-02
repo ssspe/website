@@ -18,7 +18,7 @@ class GitRepo extends Component {
   }
 
   getDataFromDb = () => {
-    var url = "/api/getGitHubReadMe?" + this.state.name;
+    var url = "/api/getGitHubReadMe?repo=" + this.state.name;
     fetch(url)
       .then(data => data.json())
       .then(res => console.log(res))

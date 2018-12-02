@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const https = require("https");
+const fs = require('fs');
 
 var gitRepos = '';
 var readMe = '';
@@ -54,6 +55,8 @@ function requestBitBucketRepo() {
 
 function requestRepoReadMe(repo) {
    console.log("Requesting" + repo + "s read me: " +  new Date());
+   var path = '/repos/ssspe/' + repo + '/readme';
+   console.log(path);
    var options = {
      host: 'api.github.com',
      path: '/repos/ssspe/' + repo + '/readme',
@@ -64,7 +67,25 @@ function requestRepoReadMe(repo) {
    var request = https.request(options, function(response){
 
      response.on("data", function(chunk){
-         readMe += chunk.toString('utf8');
+       var buf = Buffer.from(chunk, 'base64');
+       fs.writeFile("test", buf, function(err) {
+          if(err) {
+              return console.log(err);
+          }
+
+          console.log("The file was saved!");
+        });
+        var json  = JSON.parse(buf);
+        console.log(json);
+
+        fs.writeFile("test2", chunk, function(err) {
+           if(err) {
+               return console.log(err);
+           }
+
+           console.log("The file was saved!");
+         });
+
      });
 
      response.on("end", function(){
@@ -80,7 +101,9 @@ router.get("/getGitHubRepo", (req, res) => {
 });
 
 router.get("/getGitHubReadMe", (req, res) => {
-  requestRepoReadMe(res.query[0]);
+  console.log(req.query);
+  console.log(req.query.repo);
+  requestRepoReadMe(req.query.repo);
   return res.json({ success: true, data: readMe });
 });
 
