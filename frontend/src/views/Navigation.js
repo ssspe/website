@@ -10,7 +10,7 @@ export default class Navigation extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to='/'>React-Bootstrap</Link>
+            <Link to='/'>Spencer's Website</Link>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
