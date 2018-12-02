@@ -8,9 +8,21 @@ class GitRepo extends Component {
         name : props.match.params.name
     };
   }
+
   componentDidMount() {
-    console.log(this.state.name);
+    this.getDataFromDb();
+    if (!this.state.intervalIsSet) {
+      let interval = setInterval(this.getDataFromDb, 300000);
+      this.setState({ intervalIsSet: interval });
+    }
   }
+
+  getDataFromDb = () => {
+    var url = "/api/getGitHubReadMe?" + this.state.name;
+    fetch(url)
+      .then(data => data.json())
+      .then(res => console.log(res))
+  };
 
 
   render() {
