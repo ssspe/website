@@ -71,7 +71,15 @@ function requestRepoReadMe(repo, callback) {
 
      response.on("end", function(){
        var json = JSON.parse(readMe);
-       var decodedReadMe = Buffer.from(json.content, 'base64').toString('ascii');
+       console.log(json);
+       var decodedReadMe = '';
+       try {
+          decodedReadMe = Buffer.from(json.content, 'base64').toString('ascii');
+        }
+        catch(error) {
+          console.log(error);
+        }
+
        callback(decodedReadMe);
        console.log("Recieved repos read me.");
      });
@@ -92,9 +100,5 @@ router.get("/getGitHubReadMe", (req, res) => {
   });
 
 });
-
-function andThenThis(decodedReadMe) {
-  console.log('and then this' + decodedReadMe);
-}
 
 module.exports = {router, requestGitHubRepo, requestRepoReadMe};
