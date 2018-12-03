@@ -12,17 +12,28 @@ class GitRepoButton extends Component {
     isVisible: true,
   };
 
+  doesFileExist = () => {
+    try {
+      console.log("../static/images/" + this.props.repo.name + ".png")
+      return require("../static/images/" + this.props.repo.name + ".png")
+    }
+    catch(err) {
+      return null;
+    }
+  }
+
   setter1 = () => {
     this.setState({ isVisible: false })
   }
   render() {
+    this.doesFileExist();
     return (
       <DelayLink to={ '/gitrepos/' + this.props.repo.name } delay={800} onDelayEnd={this.props.setter1} onDelayStart={this.props.setter.bind(this, this.props.index)} className='github__link' style={{ textDecoration: 'none' }}>
       <Animated animationIn="bounceInUp" animationOut={"fadeOut"} isVisible={this.state.isVisible}>
       	<Card className="github__card">
       		<Row className='row no-gutters'>
       			<Col xs='3' >
-  	    			<CardImg height="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap"/>
+  	    			<CardImg height="100%" src={this.doesFileExist() ? this.doesFileExist() : 'https://via.placeholder.com/320x200'} alt="Card image cap"/>
   	    		</Col>
   	    		<Col xs='9' >
               <CardHeader>{this.props.repo.name}</CardHeader>
