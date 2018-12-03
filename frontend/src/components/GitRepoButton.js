@@ -17,7 +17,7 @@ class GitRepoButton extends Component {
   }
   render() {
     return (
-      <DelayLink to={ '/gitrepos/' + this.props.repo.name } delay={200} onDelayEnd={this.props.setter1} onDelayStart={this.props.setter.bind(this, this.props.index)} className='github__link' style={{ textDecoration: 'none' }}>
+      <DelayLink to={ '/gitrepos/' + this.props.repo.name } delay={800} onDelayEnd={this.props.setter1} onDelayStart={this.props.setter.bind(this, this.props.index)} className='github__link' style={{ textDecoration: 'none' }}>
       <Animated animationIn="bounceInUp" animationOut={"fadeOut"} isVisible={this.state.isVisible}>
       	<Card className="github__card">
       		<Row className='row no-gutters'>
