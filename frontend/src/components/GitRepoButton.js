@@ -15,7 +15,7 @@ class GitRepoButton extends Component {
   doesFileExist = () => {
     try {
       console.log("../static/images/" + this.props.repo.name + ".png")
-      return require("../static/images/" + this.props.repo.name + ".png")
+      return require("../static/images/" + this.props.repo.name + ".gif")
     }
     catch(err) {
       return null;
