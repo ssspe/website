@@ -4,7 +4,6 @@ const https = require("https");
 const fs = require('fs');
 
 var gitRepos = '';
-var readMe = '';
 
 function requestGitHubRepo() {
    console.log("Requesting git repos: " +  new Date());
@@ -53,7 +52,7 @@ function requestBitBucketRepo() {
    request.end();
 }
 
-function requestRepoReadMe(repo) {
+function requestRepoReadMe(repo, callback) {
    console.log("Requesting" + repo + "s read me: " +  new Date());
    var path = '/repos/ssspe/' + repo + '/readme';
    console.log(path);
@@ -63,33 +62,18 @@ function requestRepoReadMe(repo) {
      method: 'GET',
      headers: {'user-agent': 'node.js'}
    };
-   readMe = '';
+   var readMe = '';
    var request = https.request(options, function(response){
 
      response.on("data", function(chunk){
-       var buf = Buffer.from(chunk, 'base64');
-       fs.writeFile("test", buf, function(err) {
-          if(err) {
-              return console.log(err);
-          }
-
-          console.log("The file was saved!");
-        });
-        var json  = JSON.parse(buf);
-        console.log(json);
-
-        fs.writeFile("test2", chunk, function(err) {
-           if(err) {
-               return console.log(err);
-           }
-
-           console.log("The file was saved!");
-         });
-
+       readMe += chunk;
      });
 
      response.on("end", function(){
-         console.log("Recieved repos read me.");
+       var json = JSON.parse(readMe);
+       var decodedReadMe = Buffer.from(json.content, 'base64').toString('ascii');
+       callback(decodedReadMe);
+       console.log("Recieved repos read me.");
      });
    });
 
@@ -101,10 +85,16 @@ router.get("/getGitHubRepo", (req, res) => {
 });
 
 router.get("/getGitHubReadMe", (req, res) => {
-  console.log(req.query);
-  console.log(req.query.repo);
-  requestRepoReadMe(req.query.repo);
-  return res.json({ success: true, data: readMe });
+  requestRepoReadMe(req.query.repo, function(val) {
+    console.log(val);
+    var json = { 'data': val };
+    return res.json({ success: true, data: json });
+  });
+
 });
 
-module.exports = {router, requestGitHubRepo, requestBitBucketRepo};
+function andThenThis(decodedReadMe) {
+  console.log('and then this' + decodedReadMe);
+}
+
+module.exports = {router, requestGitHubRepo, requestRepoReadMe};
