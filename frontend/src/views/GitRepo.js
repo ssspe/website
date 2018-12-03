@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Animated} from "react-animated-css";
+const ReactMarkdown = require('react-markdown')
 
 class GitRepo extends Component {
   constructor(props) {
@@ -34,7 +35,8 @@ class GitRepo extends Component {
         <header className="App-header">
           <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
             <span> {"This is repo: " + this.state.name} </span>
-            <span> {"This is read me: " + (this.state.data == null ? '' : this.state.data.data)} </span>
+            <span> {"This is read me: "} </span>
+            <ReactMarkdown source={(this.state.data == null ? '' : this.state.data.data)}/>
           </Animated>
         </header>
       </div>

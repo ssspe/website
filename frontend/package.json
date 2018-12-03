@@ -10,6 +10,7 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-line": "^1.0.2",
+    "react-markdown": "^4.0.4",
     "react-native": "^0.57.7",
     "react-native-hr": "^1.1.4",
     "react-parallax": "^2.0.1",
