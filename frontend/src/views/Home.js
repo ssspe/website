@@ -60,6 +60,13 @@ class Home extends Component {
             </div>
           </Parallax>
         </Animated>
+        <Parallax bgImage={require("../static/images/background.jpg")} strength={500}>
+          <div style={{ height: 500 }}>
+            <div style={insideStyles}>
+              <Link to='/cv'>CV!</Link>
+            </div>
+          </div>
+        </Parallax>
       </div>
     );
   }

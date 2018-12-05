@@ -1,0 +1,32 @@
+{
+   "workExperience": [
+     {
+       "company": "Facebook",
+       "dateFrom": "12/12/2010",
+       "dateTo": "12/12/2015",
+       "role": "Assistant",
+       "Description": "Loved it"
+     },
+     {
+       "company": "Youtube",
+       "dateFrom": "12/12/2012",
+       "dateTo": "12/12/2016",
+       "role": "Assistant2",
+       "Description": "Loved it2"
+     }
+   ],
+   "academicExperience": [
+     {
+       "institute": "Liverpool",
+       "level": "PhD",
+       "grade": "A",
+       "description": "Meh"
+     },
+     {
+       "institute": "Chipping sodbury school",
+       "level": "A-Levels",
+       "grade": "A",
+       "description": "Meh2"
+     }
+   ]
+}

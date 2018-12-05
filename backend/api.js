@@ -84,6 +84,17 @@ function requestRepoReadMe(repo, callback) {
    request.end();
 }
 
+function requestcv(callback) {
+   console.log("Requesting CV: " +  new Date());
+   var json = fs.readFile('./static/CV.json', 'utf8', function (err,data) {
+     if (err) {
+       return console.log(err);
+     }
+     console.log(data);
+     callback(data);
+   });
+}
+
 router.get("/getGitHubRepo", (req, res) => {
   return res.json({ success: true, data: gitRepos });
 });
@@ -93,7 +104,13 @@ router.get("/getGitHubReadMe", (req, res) => {
     var json = { 'data': val };
     return res.json({ success: true, data: json });
   });
+});
 
+router.get("/getCVInfo", (req, res) => {
+  console.log("Spencer is great");
+  requestcv(function(val) {
+    return res.json({ success: true, data: JSON.parse(val) });
+  });
 });
 
 module.exports = {router, requestGitHubRepo, requestRepoReadMe};
