@@ -1,0 +1,13 @@
+.cv__header {
+  background-color: #3e4451;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+
+.timeline {
+  margin-left: 20vw;
+}

@@ -5,14 +5,14 @@
        "dateFrom": "12/12/2010",
        "dateTo": "12/12/2015",
        "role": "Assistant",
-       "Description": "Loved it"
+       "description": "Loved it"
      },
      {
        "company": "Youtube",
        "dateFrom": "12/12/2012",
        "dateTo": "12/12/2016",
        "role": "Assistant2",
-       "Description": "Loved it2"
+       "description": "Loved it2"
      }
    ],
    "academicExperience": [
