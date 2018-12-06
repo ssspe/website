@@ -33,10 +33,9 @@ class CV extends Component {
     return (
       <div className="App">
         <header className="cv__header">
-          <span>{(this.state.data == null ? '' : this.state.data.workExperience[0].company)}</span>
           {(this.state.data == null
             ? ''
-            : <CVBlock workExperience={this.state.data.workExperience}/>)}
+            : <CVBlock workExperience={this.state.data.workExperience} academicExperience={this.state.data.academicExperience}/>)}
         </header>
       </div>
     );

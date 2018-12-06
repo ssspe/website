@@ -1,6 +1,13 @@
 {
    "workExperience": [
      {
+       "company": "Zircon Software Ltd.",
+       "dateFrom": "August 2017",
+       "dateTo": "Present",
+       "role": "Software Engineer",
+       "description": "In this role, I worked with in the wine section of Waitrose, restocking shelves and helping people choose the right bottle of wine/spirit. This helped me greatly improve my customer relation skills."
+     },
+     {
        "company": "Waitrose",
        "dateFrom": "October 2013",
        "dateTo": "July 2014",

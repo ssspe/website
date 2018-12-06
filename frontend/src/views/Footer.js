@@ -8,6 +8,7 @@ export default class Footer extends Component {
       <div className='footer'>
         <SocialIcon className='icons' url="https://www.linkedin.com/in/spencer-robertson-089442115/" />
         <SocialIcon className='icons' url="https://www.facebook.com/spencer.robertson.9" />
+        <SocialIcon className='icons' url="https://github.com/ssspe" />
       </div>
     );
   }
