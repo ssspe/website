@@ -13,7 +13,7 @@ class CVBlock extends Component {
     isVisible: true,
   };
 
-  renderTimeLineItem = (work) => {
+  renderWorkExperienceItem = (work) => {
     return(
       <TimelineItem
         key="001"
@@ -40,24 +40,7 @@ class CVBlock extends Component {
     return (
       <div>
         <Timeline lineColor={'#ddd'}>
-          {_.map(this.props.workExperience, this.renderTimeLineItem)}
-          <TimelineItem
-            key="001"
-            dateStyle={{ visibility: 'hidden' }}
-            bodyContainerStyle={{
-              background: '#a9aaad',
-              width: '1000px',
-              padding: '20px',
-              borderRadius: '8px',
-              boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-            }}
-          >
-            <h3>work.company</h3>
-            <h4>work.role</h4>
-            <p>
-              work.description
-            </p>
-          </TimelineItem>
+          {_.map(this.props.workExperience, this.renderWorkExperienceItem)}
         </Timeline>
         <h3> Skills </h3>
         <Timeline lineColor={'transparent'}>

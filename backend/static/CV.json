@@ -1,18 +1,25 @@
 {
    "workExperience": [
      {
-       "company": "Facebook",
-       "dateFrom": "12/12/2010",
-       "dateTo": "12/12/2015",
-       "role": "Assistant",
-       "description": "Loved it"
+       "company": "Waitrose",
+       "dateFrom": "October 2013",
+       "dateTo": "July 2014",
+       "role": "Ambient Worker",
+       "description": "In this role, I worked with in the wine section of Waitrose, restocking shelves and helping people choose the right bottle of wine/spirit. This helped me greatly improve my customer relation skills."
      },
      {
-       "company": "Youtube",
-       "dateFrom": "12/12/2012",
-       "dateTo": "12/12/2016",
-       "role": "Assistant2",
-       "description": "Loved it2"
+       "company": "Hodges Cafe",
+       "dateFrom": "June 2010",
+       "dateTo": "October 2013",
+       "role": "Cafe Worker",
+       "description": "In this role, I started off as kitchen porter and preparing certain food items. I then moved on to front of house, serving customers, taking orders and working at the cash register whilst cleaning the restaurant. Finally I was chef for the cafe, preparing all food and working with in the kitchen"
+     },
+     {
+       "company": "Rolls Royce",
+       "dateFrom": "May 2010",
+       "dateTo": "June 2010",
+       "role": "Work Experience",
+       "description": "I spent one week at Rolls Royce in the aeronautical department. This one week inspired me to become an engineer and I chose my A-Levels based on this work experience."
      }
    ],
    "academicExperience": [
