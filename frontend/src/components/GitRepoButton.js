@@ -29,7 +29,6 @@ class GitRepoButton extends Component {
     this.doesFileExist();
     return (
       <DelayLink to={ '/gitrepos/' + this.props.repo.name } delay={800} onDelayEnd={this.props.setter1} onDelayStart={this.props.setter.bind(this, this.props.index)} className='github__link' style={{ textDecoration: 'none' }}>
-      <Animated animationIn="bounceInUp" animationOut={"fadeOut"} isVisible={this.state.isVisible}>
       	<Card className="github__card">
       		<Row className='row no-gutters'>
       			<Col xs='3' >
@@ -44,7 +43,6 @@ class GitRepoButton extends Component {
   	    		</Col>
   	    	</Row>
       	</Card>
-        </Animated>
       </DelayLink>
     );
   }

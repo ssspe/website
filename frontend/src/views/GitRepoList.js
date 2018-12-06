@@ -31,7 +31,7 @@ class GitRepoList extends Component {
   renderRepos = (repo, index) => {
     if (typeof repo !== 'undefined' ) {
       return (
-        <Animated animationIn="bounceInUp" animationOut={index ===  this.state.buttonClicked ? "bounceOutDown" : "bounceOutDown"} isVisible={this.state.isVisible}>
+        <Animated animationIn="zoomIn" animationOut={index ===  this.state.buttonClicked ? "bounceOutDown" : "bounceOutDown"} isVisible={this.state.isVisible}>
           <GitRepoButton repo={repo} setter={this.setter} index={index}/>
         </Animated>
       );
