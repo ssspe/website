@@ -7,7 +7,34 @@
   color: black;
 }
 
-
 .timeline {
   margin-left: 20vw;
+}
+
+.closed__arrow {
+  transform: rotate(-90deg);
+  animation: close 0.2s linear;
+}
+
+.open__arrow {
+  transform: rotate(0deg);
+  animation: open 0.2s linear;
+}
+
+@keyframes close {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes open {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
