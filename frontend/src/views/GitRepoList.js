@@ -3,14 +3,14 @@ import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
 
 class GitRepoList extends Component {
-  state = {
-    data: [],
-    intervalIsSet: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      intervalIsSet: false
+    };
+  }
 
-  // when component mounts, first thing it does is fetch all existing data in our db
-  // then we incorporate a polling logic so that we can easily see if our db has
-  // changed and implement those changes into our UI
   componentDidMount() {
     this.getDataFromDb();
     if (!this.state.intervalIsSet) {

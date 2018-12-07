@@ -4,12 +4,15 @@ import '../styles/Card.css';
 import { TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
 
-class CVEducation extends Component {
-  state = {
-    isVisible: true,
-    class: 'closed__arrow',
-    isOpen: false
-  };
+export default class CVEducation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: true,
+      class: 'closed__arrow',
+      isOpen: false
+    };
+  }
 
   handleClick = (e) => {
     this.setState({isOpen: !this.state.isOpen})
@@ -17,16 +20,11 @@ class CVEducation extends Component {
   }
 
   renderGrades = (gradeArray) => {
-    console.log(gradeArray.grade);
     return(
       <CardBody className='grade__cardbody'>
         {gradeArray.grade[0] + " - " + gradeArray.grade[1]}
       </CardBody>
     );
-  }
-
-  renderGrade = (grade) => {
-    console.log(grade);
   }
 
   render() {
@@ -68,5 +66,3 @@ class CVEducation extends Component {
     );
   }
 }
-
-export default CVEducation;

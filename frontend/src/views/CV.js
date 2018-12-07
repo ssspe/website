@@ -28,7 +28,6 @@ class CV extends Component {
 
 
   render() {
-    console.log(this.state.data);
     return (
       <div className="App">
         <header className="cv__header">

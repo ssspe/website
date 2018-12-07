@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
 import {Animated} from "react-animated-css";
-import DelayLink from '../components/DelayLink.js'
 import '../styles/Home.css';
 
 const insideStyles = {
@@ -13,13 +12,13 @@ const insideStyles = {
 };
 
 class Home extends Component {
-  state = {
-    isVisible: true
-  };
-
-  setter = () => {
-    this.setState({ isVisible: false })
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: true
+    };
   }
+
   render() {
     return (
       <div className="App">
@@ -55,7 +54,7 @@ class Home extends Component {
           <Parallax bgImage={require("../static/images/background.jpg")} strength={500}>
             <div style={{ height: 500 }}>
               <div style={insideStyles}>
-                <DelayLink delay={800} onDelayStart={this.setter} to='/gitrepos'>Git Repos!</DelayLink>
+                <Link to='/gitrepos'>Git Repos!</Link>
               </div>
             </div>
           </Parallax>

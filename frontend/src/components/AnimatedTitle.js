@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import '../styles/AnimatedTitle.css';
 
-class AnimatedTitle extends Component {
+export default class AnimatedTitle extends Component {
   constructor(props) {
     super(props);
     this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
@@ -26,5 +26,3 @@ class AnimatedTitle extends Component {
     );
   }
 }
-
-export default AnimatedTitle;
