@@ -9,6 +9,7 @@ import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
 import CVEducation from './CVEducation';
 import AnimatedTitle from './AnimatedTitle.js';
+import WorkExperienceItem from './WorkExperienceItem.js';
 
 class CVBlock extends Component {
   state = {
@@ -19,23 +20,7 @@ class CVBlock extends Component {
 
   renderWorkExperienceItem = (work) => {
     return(
-      <TimelineItem
-        dateText={work.dateFrom + '-' + work.dateTo}
-        dateInnerStyle={{ background: '#282c34', color: '#FFF' }}
-        bodyContainerStyle={{
-          background: '#a9aaad',
-          width: '52vw',
-          padding: '20px',
-          borderRadius: '8px',
-          boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-        }}
-      >
-        <h3>{work.company}</h3>
-        <h4>{work.role}</h4>
-        <p>
-          {work.description}
-        </p>
-      </TimelineItem>
+      <WorkExperienceItem workExperience={work}/>
     );
   }
 

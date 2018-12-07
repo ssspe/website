@@ -10,9 +10,7 @@ class AnimatedTitle extends Component {
   }
 
   onVisibilitySensorChange(isVisible) {
-    if (isVisible) {
-      this.setState({ visible: true });
-    }
+    this.setState({ visible: isVisible });
   }
 
   render() {
@@ -25,6 +23,7 @@ class AnimatedTitle extends Component {
     return (
       <VisibilitySensor
           {...visibilitySensorProps}
+          partialVisibility = {true}
           onChange={this.onVisibilitySensorChange} >
         <div className={'title' + (visible ? ' zoom-in' : ' is-hidden')}>
           <h3 >{this.props.title}</h3>
