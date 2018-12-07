@@ -33,13 +33,67 @@
      {
        "institute": "Liverpool",
        "level": "PhD",
-       "grade": "A",
+       "grades": [
+         {
+           "grade": [
+             "Maths", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (1st)", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (2nd)", "A*"
+           ]
+         }
+       ],
        "description": "Meh"
      },
      {
        "institute": "Chipping sodbury school",
        "level": "A-Levels",
-       "grade": "A",
+       "grades": [
+         {
+           "grade": [
+             "Maths", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (1st)", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (2nd)", "A*"
+           ]
+         }
+       ],
+       "description": "Meh2"
+     },
+     {
+       "institute": "Chipping sodbury school",
+       "level": "GCSEs",
+       "grades": [
+         {
+           "grade": [
+             "Maths", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (1st)", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Double Science (2nd)", "A*"
+           ]
+         }
+       ],
        "description": "Meh2"
      }
    ]

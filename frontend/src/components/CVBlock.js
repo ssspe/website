@@ -7,6 +7,7 @@ import '../styles/Card.css';
 import {Animated} from "react-animated-css";
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
+import CVEducation from './CVEducation';
 
 class CVBlock extends Component {
   state = {
@@ -46,34 +47,9 @@ class CVBlock extends Component {
     }
   }
 
-  renderEducationItem = (education) => {
+  renderEducationItem = (education, index) => {
     return(
-        <TimelineItem
-          dateText={education.dateFrom + '-' + education.dateTo}
-          dateInnerStyle={{ background: '#282c34', color: '#FFF' }}
-          bodyContainerStyle={{
-            background: '#a9aaad',
-            width: '1000px',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-        >
-          <h3>{education.institute}</h3>
-          <h4>{education.level}</h4>
-          <p id="toggler" onClick={this.handleClick}>
-            <img className={this.state.class} src={require("../static/images/arrow.png")} height={20} width={20}/>
-            Grades
-          </p>
-          <UncontrolledCollapse toggler="#toggler">
-            <Card>
-              <CardBody>
-                {education.grade}
-                {education.description}
-              </CardBody>
-            </Card>
-          </UncontrolledCollapse>
-        </TimelineItem>
+        <CVEducation index={ index } education={ education } />
     );
   }
 
