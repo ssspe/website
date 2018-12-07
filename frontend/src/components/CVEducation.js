@@ -27,7 +27,9 @@ class CVEducation extends Component {
   renderGrades = (gradeArray) => {
     console.log(gradeArray.grade);
     return(
-      <span>{gradeArray.grade[0] + " - " + gradeArray.grade[1]}</span>
+      <CardBody className='grade__cardbody'>
+        {gradeArray.grade[0] + " - " + gradeArray.grade[1]}
+      </CardBody>
     );
   }
 
@@ -53,16 +55,13 @@ class CVEducation extends Component {
       >
         <h3>{education.institute}</h3>
         <h4>{education.level}</h4>
-        <p id={'toggler-' + index} onClick={this.handleClick}>
+        <p className='cv__toggler' id={'toggler-' + index} onClick={this.handleClick}>
           <img className={this.state.class} src={require("../static/images/arrow.png")} height={20} width={20}/>
           Grades
         </p>
         <UncontrolledCollapse toggler={"#toggler-" + index}>
           <Card>
-            <CardBody>
-              {_.map(education.grades, this.renderGrades)}
-              {education.description}
-            </CardBody>
+            {_.map(education.grades, this.renderGrades)}
           </Card>
         </UncontrolledCollapse>
       </TimelineItem>

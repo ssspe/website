@@ -21,6 +21,10 @@
   animation: open 0.2s linear;
 }
 
+.cv__toggler {
+  margin-bottom: 0px;
+}
+
 @keyframes close {
   from {
     transform: rotate(0deg);
