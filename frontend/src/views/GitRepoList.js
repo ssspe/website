@@ -6,9 +6,7 @@ import {Animated} from "react-animated-css";
 class GitRepoList extends Component {
   state = {
     data: [],
-    intervalIsSet: false,
-    isVisible: true,
-    buttonClicked: null
+    intervalIsSet: false
   };
 
   // when component mounts, first thing it does is fetch all existing data in our db
@@ -31,16 +29,9 @@ class GitRepoList extends Component {
   renderRepos = (repo, index) => {
     if (typeof repo !== 'undefined' ) {
       return (
-        <Animated animationIn="zoomIn" animationOut="bounceOutDown" isVisible={this.state.isVisible}>
-          <GitRepoButton repo={repo} setter={this.setter} index={index}/>
-        </Animated>
+        <GitRepoButton repo={repo}/>
       );
     }
-  }
-
-  setter = (buttonClicked) => {
-    this.setState({ isVisible: false });
-    this.setState({ buttonClicked: buttonClicked });
   }
 
   render() {

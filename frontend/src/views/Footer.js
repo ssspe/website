@@ -9,6 +9,9 @@ export default class Footer extends Component {
         <SocialIcon className='icons' url="https://www.linkedin.com/in/spencer-robertson-089442115/" />
         <SocialIcon className='icons' url="https://www.facebook.com/spencer.robertson.9" />
         <SocialIcon className='icons' url="https://github.com/ssspe" />
+        <a href="mailto:spencer.robertson@zirconsoftware.co.uk">
+          <SocialIcon className='icons' network="email"/>
+        </a>
       </div>
     );
   }

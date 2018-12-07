@@ -8,6 +8,7 @@ import {Animated} from "react-animated-css";
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
 import CVEducation from './CVEducation';
+import AnimatedTitle from './AnimatedTitle.js';
 
 class CVBlock extends Component {
   state = {
@@ -56,10 +57,11 @@ class CVBlock extends Component {
   render() {
     return (
       <div>
+        <AnimatedTitle title="Work Experience" />
         <Timeline lineColor={'#ddd'}>
           {_.map(this.props.workExperience, this.renderWorkExperienceItem)}
         </Timeline>
-        <h3> Skills </h3>
+        <AnimatedTitle title="Skills" />
         <Timeline lineColor={'transparent'}>
           <TimelineItem
             key="001"
@@ -80,7 +82,7 @@ class CVBlock extends Component {
             </p>
           </TimelineItem>
         </Timeline>
-        <h3> Education </h3>
+        <AnimatedTitle title="Education" />
         <Timeline lineColor={'#ddd'}>
           {_.map(this.props.academicExperience, this.renderEducationItem)}
         </Timeline>
