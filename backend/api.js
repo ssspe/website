@@ -90,7 +90,6 @@ function requestcv(callback) {
      if (err) {
        return console.log(err);
      }
-     console.log(data);
      callback(data);
    });
 }

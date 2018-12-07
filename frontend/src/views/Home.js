@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 import {Animated} from "react-animated-css";
 import DelayLink from '../components/DelayLink.js'
 import '../styles/Home.css';
@@ -35,7 +35,7 @@ class Home extends Component {
                   borderRadius: "50%",
                   opacity: percentage > 0.6 ? 1 - ((percentage - 0.6)*4): 1,
                 }} class="rectangle"></div>
-                <img src={require("../static/images/wheel.png")} height={20} width={20}
+                <img src={require("../static/images/wheel.png")} alt="Wheel" height={20} width={20}
                 style={{
                   position: "absolute",
                   left: "50%",

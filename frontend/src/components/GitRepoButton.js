@@ -5,7 +5,6 @@ import { Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Card.css';
 import {Link} from 'react-router-dom';
-import {Animated} from "react-animated-css";
 import VisibilitySensor from 'react-visibility-sensor';
 
 class GitRepoButton extends Component {
@@ -36,13 +35,9 @@ class GitRepoButton extends Component {
   }
   render() {
     const visible = this.state.visible;
-    const {
-      repo,
-      visibilitySensorProps,
-    } = this.props;
+
     return (
       <VisibilitySensor
-          {...visibilitySensorProps}
           onChange={this.onVisibilitySensorChange} >
         <Link to={ '/gitrepos/' + this.props.repo.name } className='github__link' style={{ textDecoration: 'none' }}>
         	<Card className={'github__card' + (visible ? ' zoom-in' : ' is-hidden')}>

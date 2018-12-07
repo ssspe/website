@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardHeader, UncontrolledCollapse} from 'reactstrap';
-import { Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, CardBody, UncontrolledCollapse} from 'reactstrap';
 import '../styles/Card.css';
-import {Animated} from "react-animated-css";
-import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
+import { TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
 
 class CVEducation extends Component {
@@ -17,11 +13,7 @@ class CVEducation extends Component {
 
   handleClick = (e) => {
     this.setState({isOpen: !this.state.isOpen})
-    if (this.state.isOpen) {
-      this.setState({class: 'closed__arrow'})
-    } else {
-      this.setState({class: 'open__arrow'})
-    }
+    this.setState({class: this.state.isOpen ? 'closed__arrow' : 'open__arrow'})
   }
 
   renderGrades = (gradeArray) => {
@@ -56,12 +48,16 @@ class CVEducation extends Component {
         <h3>{education.institute}</h3>
         <h4>{education.level}</h4>
         <p className='cv__toggler' id={'toggler-' + index} onClick={this.handleClick}>
-          {education.gradesTitle == "Grades"
-          ? <img className={this.state.class} src={require("../static/images/arrow.png")} height={20} width={20}/>
+          {education.gradesTitle === "Grades"
+          ? <img
+          className={this.state.class}
+          src={require("../static/images/arrow.png")}
+          alt="Arrow"
+          height={20} width={20}/>
           : null }
           {education.gradesTitle}
         </p>
-        {education.gradesTitle == "Grades"
+        {education.gradesTitle === "Grades"
         ? <UncontrolledCollapse toggler={"#toggler-" + index}>
           <Card>
             {_.map(education.grades, this.renderGrades)}

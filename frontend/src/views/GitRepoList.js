@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
-import {Animated} from "react-animated-css";
 
 class GitRepoList extends Component {
   state = {

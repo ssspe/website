@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardHeader, UncontrolledCollapse} from 'reactstrap';
-import { Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Card.css';
-import {Animated} from "react-animated-css";
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import _ from 'lodash';
 import CVEducation from './CVEducation';

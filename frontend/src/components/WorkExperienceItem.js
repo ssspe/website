@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardHeader, UncontrolledCollapse} from 'reactstrap';
-import { Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/WorkExperienceItem.css';
-import {Animated} from "react-animated-css";
-import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
-import _ from 'lodash';
+import { TimelineItem }  from 'vertical-timeline-component-for-react';
 
-class workExperienceItem extends Component {
+class WorkExperienceItem extends Component {
   render() {
     const work = this.props.workExperience;
 
@@ -34,4 +28,4 @@ class workExperienceItem extends Component {
   }
 }
 
-export default workExperienceItem;
+export default WorkExperienceItem;
