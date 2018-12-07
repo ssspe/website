@@ -23,7 +23,7 @@ class CVBlock extends Component {
         dateInnerStyle={{ background: '#282c34', color: '#FFF' }}
         bodyContainerStyle={{
           background: '#a9aaad',
-          width: '1000px',
+          width: '52vw',
           padding: '20px',
           borderRadius: '8px',
           boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -67,7 +67,7 @@ class CVBlock extends Component {
             style={{ visibility: 'hidden' }}
             bodyContainerStyle={{
               background: '#a9aaad',
-              width: '1000px',
+              width: '52vw',
               padding: '20px',
               borderRadius: '8px',
               boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',

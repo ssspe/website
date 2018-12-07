@@ -32,7 +32,10 @@
    "academicExperience": [
      {
        "institute": "Liverpool",
-       "level": "PhD",
+       "dateFrom": "2014",
+       "dateTo": "2017",
+       "level": "Mechatronic Engineering with Robotic Systems",
+       "gradesTitle": "Left to work for Zircon",
        "grades": [
          {
            "grade": [
@@ -54,21 +57,39 @@
      },
      {
        "institute": "Chipping sodbury school",
+       "dateFrom": "2012",
+       "dateTo": "2014",
        "level": "A-Levels",
+       "gradesTitle": "Grades",
        "grades": [
          {
            "grade": [
-             "Maths", "A*"
+             "Maths", "A"
            ]
          },
          {
            "grade": [
-             "Double Science (1st)", "A*"
+             "Physics", "B"
            ]
          },
          {
            "grade": [
-             "Double Science (2nd)", "A*"
+             "EPQ (AS Level)", "B"
+           ]
+         },
+         {
+           "grade": [
+             "Further Maths (AS Level)", "B"
+           ]
+         },
+         {
+           "grade": [
+             "Photography (AS Level)", "C"
+           ]
+         },
+         {
+           "grade": [
+             "Chemistry", "D"
            ]
          }
        ],
@@ -76,7 +97,10 @@
      },
      {
        "institute": "Chipping sodbury school",
+       "dateFrom": "2007",
+       "dateTo": "2012",
        "level": "GCSEs",
+       "gradesTitle": "Grades",
        "grades": [
          {
            "grade": [
@@ -91,6 +115,21 @@
          {
            "grade": [
              "Double Science (2nd)", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "Art", "A*"
+           ]
+         },
+         {
+           "grade": [
+             "RE", "A"
+           ]
+         },
+         {
+           "grade": [
+             "Geography", "B"
            ]
          }
        ],

@@ -47,7 +47,7 @@ class CVEducation extends Component {
         dateInnerStyle={{ background: '#282c34', color: '#FFF' }}
         bodyContainerStyle={{
           background: '#a9aaad',
-          width: '1000px',
+          width: '52vw',
           padding: '20px',
           borderRadius: '8px',
           boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
@@ -56,14 +56,18 @@ class CVEducation extends Component {
         <h3>{education.institute}</h3>
         <h4>{education.level}</h4>
         <p className='cv__toggler' id={'toggler-' + index} onClick={this.handleClick}>
-          <img className={this.state.class} src={require("../static/images/arrow.png")} height={20} width={20}/>
-          Grades
+          {education.gradesTitle == "Grades"
+          ? <img className={this.state.class} src={require("../static/images/arrow.png")} height={20} width={20}/>
+          : null }
+          {education.gradesTitle}
         </p>
-        <UncontrolledCollapse toggler={"#toggler-" + index}>
+        {education.gradesTitle == "Grades"
+        ? <UncontrolledCollapse toggler={"#toggler-" + index}>
           <Card>
             {_.map(education.grades, this.renderGrades)}
           </Card>
         </UncontrolledCollapse>
+        : null }
       </TimelineItem>
     );
   }
