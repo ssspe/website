@@ -1,11 +1,22 @@
 .navbar,
 .navbar-default {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    min-height: 5vh;
+    padding: 0px;
     background-color: #282c34 !important;
-    vertical-align: middle;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar__small {
+  transition: all 0.1s linear 0.1s;
+  min-height: 5vh;
+}
+
+.navbar__big {
+  transition: all 0.1s linear 0.1s;
+  min-height: 10vh;
 }
 
 .navbar-brand {

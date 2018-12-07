@@ -33,26 +33,10 @@
      {
        "institute": "Liverpool",
        "dateFrom": "2014",
-       "dateTo": "2017",
+       "dateTo": "2016",
        "level": "Mechatronic Engineering with Robotic Systems",
        "gradesTitle": "Left to work for Zircon",
-       "grades": [
-         {
-           "grade": [
-             "Maths", "A*"
-           ]
-         },
-         {
-           "grade": [
-             "Double Science (1st)", "A*"
-           ]
-         },
-         {
-           "grade": [
-             "Double Science (2nd)", "A*"
-           ]
-         }
-       ],
+       "grades": [],
        "description": "Meh"
      },
      {

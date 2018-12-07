@@ -5,9 +5,26 @@ import { Link } from 'react-router-dom'
 import '../styles/Navigation.css'
 
 export default class Navigation extends Component {
+
+  state = {
+    className: 'navbar__big'
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+   var lastScrollY = window.scrollY;
+   if (lastScrollY > 100) {
+     this.setState({className: 'navbar__small'})
+   } else {
+     this.setState({className: 'navbar__big'})
+   }
+ }
+
   render() {
     return(
-      <Navbar>
+      <Navbar className={this.state.className}>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to='/'>Spencer's Website</Link>
