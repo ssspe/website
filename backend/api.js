@@ -106,7 +106,6 @@ router.get("/getGitHubReadMe", (req, res) => {
 });
 
 router.get("/getCVInfo", (req, res) => {
-  console.log("Spencer is great");
   requestcv(function(val) {
     return res.json({ success: true, data: JSON.parse(val) });
   });

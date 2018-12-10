@@ -15,7 +15,7 @@ export default class Navigation extends Component {
 
   handleScroll = () => {
    var lastScrollY = window.scrollY;
-   if (lastScrollY > 100) {
+   if (lastScrollY > 40) {
      this.setState({className: 'navbar__small'})
    } else {
      this.setState({className: 'navbar__big'})
