@@ -82,51 +82,17 @@ class Home extends Component {
          <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
         </div>
         <Element name="scroll-to-element" >
-          <Parallax
-            bgImage={require("../static/images/background.jpg")}
-            strength={500}
-            renderLayer={percentage => (
-              <div>
-                  <div style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: "60%",
-                    borderRadius: "50%",
-                    opacity: percentage > 0.6 ? 1 - ((percentage - 0.6)*4): 1,
-                  }} class="rectangle"></div>
-                  <img src={require("../static/images/wheel.png")} alt="Wheel" height={20} width={20}
-                  style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: "60%",
-                    borderRadius: "50%",
-                    transform: "translate(-50%,-50%) rotate(" + (percentage > 0.6 ? percentage * 490 : 0) + "deg)",
-                    opacity: percentage > 0.6 ? 1 - ((percentage - 0.6)*4): 1,
-                  }}/>
+          <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={this.state.isVisible}>
+            <Parallax bgImage={require("../static/images/background.jpg")} strength={500}>
+              <div style={{ height: 1000 }}>
+                <div style={insideStyles}>
+                  <Link to='/gitrepos'>Git Repos!</Link>
+                  <Link to='/cv'>CV!</Link>
+                </div>
               </div>
-            )}
-          >
-            <div style={{ height: 500 }}>
-              <div style={insideStyles}>Spencer's Website</div>
-            </div>
-          </Parallax>
+            </Parallax>
+          </Animated>
         </Element>
-        <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={this.state.isVisible}>
-          <Parallax bgImage={require("../static/images/background.jpg")} strength={500}>
-            <div style={{ height: 500 }}>
-              <div style={insideStyles}>
-                <Link to='/gitrepos'>Git Repos!</Link>
-              </div>
-            </div>
-          </Parallax>
-        </Animated>
-        <Parallax bgImage={require("../static/images/background.jpg")} strength={500}>
-          <div style={{ height: 100 }}>
-            <div style={insideStyles}>
-              <Link to='/cv'>CV!</Link>
-            </div>
-          </div>
-        </Parallax>
       </div>
     );
   }
