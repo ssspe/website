@@ -4,6 +4,7 @@ import GitRepoList from '../views/GitRepoList.js'
 import GitRepo from '../views/GitRepo.js'
 import CV from '../views/CV.js'
 import React from 'react';
+import NoMatch from '../views/NoMatch.js';
 
 const Router = () => (
   <main>
@@ -12,6 +13,7 @@ const Router = () => (
       <Route exact path='/gitrepos' component={GitRepoList}/>
       <Route exact path='/cv' component={CV}/>
       <Route path='/gitrepos/:name' component={GitRepo}/>
+      <Route component={NoMatch} />
     </Switch>
   </main>
 )
