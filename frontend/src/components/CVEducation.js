@@ -8,15 +8,16 @@ export default class CVEducation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: true,
       class: 'closed__arrow',
       isOpen: false
     };
   }
 
   handleClick = (e) => {
-    this.setState({isOpen: !this.state.isOpen})
-    this.setState({class: this.state.isOpen ? 'closed__arrow' : 'open__arrow'})
+    this.setState({
+      isOpen: !this.state.isOpen,
+      class: this.state.isOpen ? 'closed__arrow' : 'open__arrow'
+    });
   }
 
   renderGrades = (gradeArray) => {

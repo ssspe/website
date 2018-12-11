@@ -17,7 +17,6 @@ class GitRepo extends Component {
       let interval = setInterval(this.getDataFromDb, 300000);
       this.setState({ intervalIsSet: interval });
     }
-
   }
 
   getDataFromDb = () => {

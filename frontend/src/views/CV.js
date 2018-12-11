@@ -6,7 +6,7 @@ class CV extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        data : null,
+      data : null,
     };
   }
 
@@ -16,7 +16,6 @@ class CV extends Component {
       let interval = setInterval(this.getDataFromDb, 300000);
       this.setState({ intervalIsSet: interval });
     }
-
   }
 
   getDataFromDb = () => {
@@ -24,8 +23,7 @@ class CV extends Component {
     fetch(url)
       .then(data => data.json())
       .then(res => this.setState({ data: res.data }))
-  };
-
+  }
 
   render() {
     return (

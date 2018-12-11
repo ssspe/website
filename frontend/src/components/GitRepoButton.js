@@ -33,8 +33,8 @@ class GitRepoButton extends Component {
 
     return (
       <VisibilitySensor
-          partialVisibility={ true }
-          onChange={ this.onVisibilitySensorChange } >
+        partialVisibility={ true }
+        onChange={ this.onVisibilitySensorChange } >
         <Link to={ '/gitrepos/' + repo.name } className='github__link' style={{ textDecoration: 'none' }}>
         	<Card className={'github__card' + (visible ? ' zoom-in' : ' is-hidden')}>
         		<Row className='row no-gutters'>

@@ -7,7 +7,7 @@ class NoMatch extends Component {
   render() {
     return (
       <div className="App">
-        Hello
+        404
       </div>
     );
   }

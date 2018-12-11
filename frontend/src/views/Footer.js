@@ -6,11 +6,11 @@ export default class Footer extends Component {
   render() {
     return(
       <div className='footer'>
-        <SocialIcon className='icons' url="https://www.linkedin.com/in/spencer-robertson-089442115/" />
-        <SocialIcon className='icons' url="https://www.facebook.com/spencer.robertson.9" />
-        <SocialIcon className='icons' url="https://github.com/ssspe" />
+        <SocialIcon className='social__icons' url="https://www.linkedin.com/in/spencer-robertson-089442115/" />
+        <SocialIcon className='social__icons' url="https://www.facebook.com/spencer.robertson.9" />
+        <SocialIcon className='social__icons' url="https://github.com/ssspe" />
         <a href="mailto:spencer.robertson@zirconsoftware.co.uk">
-          <SocialIcon className='icons' network="email"/>
+          <SocialIcon className='social__icons' network="email"/>
         </a>
       </div>
     );

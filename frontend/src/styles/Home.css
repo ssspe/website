@@ -8,6 +8,31 @@
   background-color: black;
 }
 
-.title {
+.home__title {
   font-size: 100px !important;
+  font-family: MyFont !important;
+}
+
+.home__border {
+  border-color: #3e4451 !important;
+  width:100%;
+  height:100px;
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+  position: absolute;
+  z-index: 10;
+  background-color: inherit;
+}
+
+.inside__style {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  zindex: 20;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(../static/fonts/Cache-Oblique.ttf) format('woff');
 }

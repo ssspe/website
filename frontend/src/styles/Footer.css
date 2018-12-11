@@ -3,12 +3,12 @@
 	text-align: center;
 }
 
-.icons {
+.social__icons {
 	margin: 10px 10px 10px 10px;
 	filter: brightness(0%);
 	opacity: 0.3;
 }
 
-.icons:hover {
+.social__icons:hover {
 	opacity: 0.4;
 }

@@ -6,7 +6,9 @@ export default class AnimatedTitle extends Component {
   constructor(props) {
     super(props);
     this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
-    this.state = { visible: false };
+    this.state = {
+      visible: false
+    };
   }
 
   onVisibilitySensorChange(isVisible) {
@@ -17,8 +19,8 @@ export default class AnimatedTitle extends Component {
     const visible = this.state.visible;
     return (
       <VisibilitySensor
-          partialVisibility = {true}
-          onChange={this.onVisibilitySensorChange} >
+        partialVisibility = {true}
+        onChange={this.onVisibilitySensorChange} >
         <div className={'title' + (visible ? ' zoom-in' : ' is-hidden')}>
           <h3 >{this.props.title}</h3>
         </div>

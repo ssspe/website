@@ -16,8 +16,7 @@ class WorkExperienceItem extends Component {
           padding: '20px',
           borderRadius: '8px',
           boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-        }}
-      >
+        }} >
         <h3>{work.company}</h3>
         <h4>{work.role}</h4>
         <p>
