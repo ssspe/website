@@ -77,7 +77,7 @@ class Home extends Component {
         }
 
         }/>
-          <div style={insideStyles}>Spencer's Website</div>
+          <div className="title" style={insideStyles}>Spencer's Website</div>
         <div className="border1">
          <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
         </div>
