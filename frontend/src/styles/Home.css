@@ -11,6 +11,7 @@
 .home__title {
   font-size: 100px !important;
   font-family: MyFont !important;
+  pointer-events: none;
 }
 
 .home__border {
