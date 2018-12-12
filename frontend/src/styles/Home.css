@@ -8,12 +8,6 @@
   background-color: black;
 }
 
-.home__title {
-  font-size: 100px !important;
-  font-family: MyFont !important;
-  pointer-events: none;
-}
-
 .home__border {
   border-color: #3e4451 !important;
   width:100%;
@@ -26,10 +20,15 @@
 }
 
 .inside__style {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  max-width:100%;
+  max-height:100%;
+  overflow:auto;
   zindex: 20;
 }
 
