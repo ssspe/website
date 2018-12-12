@@ -8,6 +8,10 @@
   background-color: black;
 }
 
+.home__title {
+  pointer-events: none;
+}
+
 .home__border {
   border-color: #3e4451 !important;
   width:100%;
