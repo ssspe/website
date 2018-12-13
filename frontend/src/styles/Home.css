@@ -31,29 +31,27 @@
 
 .static__holder {
   height: 100vh;
-  background-color: #3e4451;
-}
-
-.inside__style {
-  position:absolute;
+  position: fixed;
   left:0;
   right:0;
   top:0;
   bottom:0;
-  margin:auto;
-  max-width:100%;
-  max-height:100%;
-  overflow:auto;
-  zindex: 20;
+  background-color: #3e4451;
+}
+.right__side {
+  display: table;
+  height: 300vh;
+  width: 50vh;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  justify-content: center;
+  align-items: center;
 }
 
-.inside__style-content {
-  height: 100vh;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  zindex: 20;
+.center {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 @font-face {

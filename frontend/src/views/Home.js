@@ -80,6 +80,7 @@ class Home extends Component {
 
   render() {
     const background = require("../static/images/background.jpg");
+    // <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
     return (
       <div className="App">
         <div className="static__holder">
@@ -89,10 +90,11 @@ class Home extends Component {
             params={ particleParams }/>
           <div id="my-div" className="home__title" ></div>
         </div>
-        <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
-        <div className="inside__style-content">
-          <Link to='/gitrepos'>Git Repos!</Link>
-          <Link to='/cv'>CV!</Link>
+        <div className="right__side">
+          <div className="center">
+            <Link className="center" to='/gitrepos'>Git Repos!</Link>
+            <Link className="center" to='/cv'>CV!</Link>
+          </div>
         </div>
       </div>
     );
