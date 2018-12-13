@@ -18,7 +18,7 @@
   transition: all 0.2s ease-in-out;
   min-height: 8vh;
   font-size: 20px;
-  background-color: transparent !important;
+  background-color: #3e4451 !important;
 }
 
 .navbar__header {

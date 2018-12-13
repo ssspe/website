@@ -82,22 +82,18 @@ class Home extends Component {
     const background = require("../static/images/background.jpg");
     return (
       <div className="App">
-        <Particles
-          className="particle"
-          canvasClassName="particle"
-          params={ particleParams }/>
-        <div id="my-div" className="home__title inside__style" style={{ height: 150 }}></div>
+        <div className="static__holder">
+          <Particles
+            className="particle"
+            canvasClassName="particle"
+            params={ particleParams }/>
+          <div id="my-div" className="home__title" ></div>
+        </div>
         <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
-        <Element name="scroll-to-element" >
-          <Parallax bgImage={ background } strength={1000}>
-            <div style={{ height: 1000 }}>
-              <div className="inside__style-content">
-                <Link to='/gitrepos'>Git Repos!</Link>
-                <Link to='/cv'>CV!</Link>
-              </div>
-            </div>
-          </Parallax>
-        </Element>
+        <div className="inside__style-content">
+          <Link to='/gitrepos'>Git Repos!</Link>
+          <Link to='/cv'>CV!</Link>
+        </div>
       </div>
     );
   }
