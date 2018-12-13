@@ -13,16 +13,20 @@ const particleParams = {
     },
     size: {
       value: 5,
-      random: true
+      random: true,
     },
     opacity: {
-      value: 0.5
+      value: 0.5,
     },
     move: {
         random: true,
         speed: 1,
         direction: "out",
         out_mode: "out"
+    },
+    line_linked: {
+        enable: true,
+        color: "#89cff0",
     }
   },
   interactivity: {
@@ -61,7 +65,9 @@ class Home extends Component {
   }
 
   componentDidMount(){
-        new Vivus('my-div', {duration: 200, file: require('../static/images/download.svg')});
+        new Vivus('my-div', {duration: 150, file: require('../static/images/download.svg')}, function(obj) {
+          obj.el.classList.add('finsihed');
+        });
   }
 
   scrollTo() {
@@ -76,7 +82,6 @@ class Home extends Component {
     const background = require("../static/images/background.jpg");
     return (
       <div className="App">
-
         <Particles
           className="particle"
           canvasClassName="particle"
@@ -86,9 +91,9 @@ class Home extends Component {
           <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
         </div>
         <Element name="scroll-to-element" >
-          <Parallax bgImage={ background } strength={500}>
+          <Parallax bgImage={ background } strength={1000}>
             <div style={{ height: 1000 }}>
-              <div className="inside__style">
+              <div className="inside__style-content">
                 <Link to='/gitrepos'>Git Repos!</Link>
                 <Link to='/cv'>CV!</Link>
               </div>
