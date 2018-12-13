@@ -87,9 +87,7 @@ class Home extends Component {
           canvasClassName="particle"
           params={ particleParams }/>
         <div id="my-div" className="home__title inside__style" style={{ height: 150 }}></div>
-        <div className="home__border">
-          <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
-        </div>
+        <img className="navigate__arrow" onClick={this.scrollTo} src={require("../static/images/arrow.png")} alt="Wheel" />
         <Element name="scroll-to-element" >
           <Parallax bgImage={ background } strength={1000}>
             <div style={{ height: 1000 }}>

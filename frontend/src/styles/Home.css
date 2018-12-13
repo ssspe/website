@@ -44,23 +44,6 @@
   zindex: 20;
 }
 
-.started {
-  fill: transparent;
-}
-
-.finsihed {
-  fill: url(#linear);
-}
-
-@keyframes background_anim {
-  from {
-    fill: transparent;
-  },
-  to {
-    fill:
-  }
-}
-
 @font-face {
   font-family: 'MyFont';
   src: local('MyFont'), url(../static/fonts/Cache-Oblique.ttf) format('woff');
