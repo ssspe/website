@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
+import {Animated} from "react-animated-css";
 
 class GitRepoList extends Component {
   constructor(props) {
@@ -39,9 +40,11 @@ class GitRepoList extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Animated animationIn="fadeInRightBig" animationOut="fadeOut" isVisible={true}>
             { data.length <= 0
               ? ''
               : _.map(data, this.renderRepos) }
+          </Animated>
         </header>
       </div>
     );

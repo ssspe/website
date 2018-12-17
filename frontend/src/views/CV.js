@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CVBlock from '../components/CVBlock.js'
 import '../styles/CV.css';
+import {Animated} from "react-animated-css";
 
 class CV extends Component {
   constructor(props) {
@@ -29,9 +30,11 @@ class CV extends Component {
     return (
       <div className="App">
         <header className="cv__header">
-          {(this.state.data == null
-            ? ''
-            : <CVBlock workExperience={this.state.data.workExperience} academicExperience={this.state.data.academicExperience}/>)}
+          <Animated animationIn="fadeInRightBig" animationOut="fadeOut" isVisible={true}>
+            {(this.state.data == null
+              ? ''
+              : <CVBlock workExperience={this.state.data.workExperience} academicExperience={this.state.data.academicExperience}/>)}
+          </Animated>
         </header>
       </div>
     );
