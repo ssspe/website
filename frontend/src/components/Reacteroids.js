@@ -134,8 +134,8 @@ export class Reacteroids extends Component {
     // Make ship
     let ship = new Ship({
       position: {
-        x: this.state.screen.width/2,
-        y: this.state.screen.height/2
+        x: this.state.screen.width/2 - 68,
+        y: this.state.screen.height/2 - 115
       },
       create: this.createObject.bind(this),
       onDie: this.gameOver.bind(this)

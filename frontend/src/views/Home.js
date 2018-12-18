@@ -66,7 +66,10 @@ class Home extends Component {
     super(props);
     this.state = {
       isVisible: true,
-      game: false
+      isVisible2: true,
+      game: false,
+      x: 0,
+      y: 0
     };
   }
 
@@ -83,6 +86,7 @@ class Home extends Component {
       file: require('../static/images/ship.svg')},
       function(obj) {
         obj.el.classList.add('finsihed2');
+        console.log(obj);
       });
     this.scrollToBottom();
   }
@@ -98,7 +102,11 @@ class Home extends Component {
 
   handleClick = () => {
     console.log(this.state.game);
-    this.setState({game: !this.state.game});
+    this.setState({isVisible2: !this.state.isVisible2});
+    setTimeout(function() { //Start the timer
+        this.setState({game: !this.state.game}); //After 1 second, set render to true
+    }.bind(this), 2000)
+
 
   }
 
@@ -110,29 +118,36 @@ class Home extends Component {
     const background = require("../static/images/background.jpg");
     return (
       this.state.game ?
-        <Reacteroids/> :
-      <div className="home">
-        <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>
-          <img
-          className="forward__arrow"
-          onClick={this.handleForwardClick}
-          src={require("../static/images/arrow.png")}
-          alt="ForwardArrow"
-          height={20} width={20}/>
-        </DelayLink>
-        <Animated animationIn="fadeInLeftBig" animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
-          <div id="full-title" className="home__title" ></div>
-          <div id="ship" className="home__title" ></div>
-        </Animated>
-        <div className="right__side" >
-          <div className="center">
-            <Animated animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
-              <button onClick={this.handleClick}> HELLO </button>
-            </Animated>
-            <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>Git Repos!</DelayLink>
-            <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/cv'>CV!</DelayLink>
+      <Animated animationIn="fadeIn" isVisible={true}>
+        <Reacteroids />
+      </Animated> :
+      <div>
+      <div id="ship" className="home__title" ></div>
+      <Animated animationOut="fadeOut" isVisible={this.state.isVisible2}>
+        <div className="home">
+          <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>
+            <img
+            className="forward__arrow"
+            onClick={this.handleForwardClick}
+            src={require("../static/images/arrow.png")}
+            alt="ForwardArrow"
+            height={20} width={20}/>
+          </DelayLink>
+          <Animated animationIn="fadeInLeftBig" animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
+            <div id="full-title" className="home__title" ></div>
+
+          </Animated>
+          <div className="right__side" >
+            <div className="center">
+              <Animated animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
+                <button onClick={this.handleClick}> HELLO </button>
+              </Animated>
+              <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>Git Repos!</DelayLink>
+              <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/cv'>CV!</DelayLink>
+            </div>
           </div>
         </div>
+      </Animated>
       </div>
     );
   }
