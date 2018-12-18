@@ -9,6 +9,7 @@ import keydown from 'react-keydown';
 import ParticlesBackground from '../components/ParticlesBackground.js';
 import {Animated} from "react-animated-css";
 import DelayLink from "../components/DelayLink.js";
+import { Reacteroids } from '../components/Reacteroids.js';
 
 const particleParams = {
   particles: {
@@ -64,7 +65,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: true
+      isVisible: true,
+      game: false
     };
   }
 
@@ -95,8 +97,9 @@ class Home extends Component {
   }
 
   handleClick = () => {
-    console.log(this.state.isVisible);
-    this.setState({ isVisible: !this.state.isVisible });
+    console.log(this.state.game);
+    this.setState({game: !this.state.game});
+
   }
 
   handleForwardClick = () => {
@@ -106,6 +109,8 @@ class Home extends Component {
   render() {
     const background = require("../static/images/background.jpg");
     return (
+      this.state.game ?
+        <Reacteroids/> :
       <div className="home">
         <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>
           <img
@@ -115,7 +120,7 @@ class Home extends Component {
           alt="ForwardArrow"
           height={20} width={20}/>
         </DelayLink>
-        <Animated animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
+        <Animated animationIn="fadeInLeftBig" animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
           <div id="full-title" className="home__title" ></div>
           <div id="ship" className="home__title" ></div>
         </Animated>

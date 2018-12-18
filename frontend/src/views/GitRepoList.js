@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import GitRepoButton from '../components/GitRepoButton';
 import {Animated} from "react-animated-css";
+import DelayLink from "../components/DelayLink.js";
 
 class GitRepoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      intervalIsSet: false
+      intervalIsSet: false,
+      isVisible: true
     };
   }
 
@@ -34,16 +36,37 @@ class GitRepoList extends Component {
     }
   }
 
+  handleClick = () => {
+    console.log(this.state.isVisible);
+    this.setState({ isVisible: !this.state.isVisible });
+  }
+
   render() {
     const { data } = this.state;
 
     return (
       <div className="App">
         <header className="App-header">
-          <Animated animationIn="fadeInRightBig" animationOut="fadeOut" isVisible={true}>
+          <Animated animationIn="fadeInRightBig" animationOut="fadeOutRightBig" isVisible={this.state.isVisible}>
+            <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/'>
+              <img
+              className="back__arrow"
+              onClick={this.handleBackClick}
+              src={require("../static/images/arrow.png")}
+              alt="BackArrow"
+              height={20} width={20}/>
+            </DelayLink>
             { data.length <= 0
               ? ''
               : _.map(data, this.renderRepos) }
+            <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/cv'>
+              <img
+              className="forward__arrow"
+              onClick={this.handleForwardClick}
+              src={require("../static/images/arrow.png")}
+              alt="ForwardArrow"
+              height={20} width={20}/>
+            </DelayLink>
           </Animated>
         </header>
       </div>
