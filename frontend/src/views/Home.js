@@ -118,13 +118,11 @@ class Home extends Component {
     const background = require("../static/images/background.jpg");
     return (
       this.state.game ?
-      <Animated animationIn="fadeIn" isVisible={true}>
-        <Reacteroids />
-      </Animated> :
+      <Reacteroids /> :
       <div>
-      <div id="ship" className="home__title" ></div>
-      <Animated animationOut="fadeOut" isVisible={this.state.isVisible2}>
-        <div className="home">
+        <div id="ship" className="home__title" />
+        <div className={this.state.isVisible2 ? "animation__helper" : "animation__helper-black" } />
+        <div className="home" >
           <DelayLink delay={800} onDelayStart={this.handleClick} className="center" to='/gitrepos'>
             <img
             className="forward__arrow"
@@ -133,9 +131,8 @@ class Home extends Component {
             alt="ForwardArrow"
             height={20} width={20}/>
           </DelayLink>
-          <Animated animationIn="fadeInLeftBig" animationOut="fadeOutLeftBig" isVisible={this.state.isVisible}>
-            <div id="full-title" className="home__title" ></div>
-
+          <Animated animationIn="fadeInLeftBig" animationOut="fadeOutLeftBig" isVisible={this.state.isVisible || this.state.isVisible2}>
+            <div id="full-title" className={this.state.isVisible2 ? "home__title" : "home__title-hidden" } />
           </Animated>
           <div className="right__side" >
             <div className="center">
@@ -147,7 +144,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-      </Animated>
       </div>
     );
   }

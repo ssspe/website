@@ -11,9 +11,7 @@ class App extends Component {
     return(
       <div>
         <ParallaxProvider>
-          <Navigation />
           <Router />
-          <Footer />
         </ParallaxProvider>
       </div>
     );

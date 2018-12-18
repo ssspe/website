@@ -3,6 +3,7 @@ import Ship from './Ship';
 import Asteroid from './Asteroid';
 import { randomNumBetweenExcluding } from './helpers';
 import '../styles/reacteroids.css';
+import {Animated} from "react-animated-css";
 
 const KEY = {
   LEFT:  37,
@@ -247,17 +248,19 @@ export class Reacteroids extends Component {
 
     return (
       <div>
-        { endgame }
-        <span className="score current-score" >Score: {this.state.currentScore}</span>
-        <span className="score top-score" >Top Score: {this.state.topScore}</span>
-        <span className="controls" >
-          Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
-          Use [SPACE] to SHOOT
-        </span>
-        <canvas ref="canvas"
-          width={this.state.screen.width * this.state.screen.ratio}
-          height={this.state.screen.height * this.state.screen.ratio}
-        />
+        <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
+          { endgame }
+          <span className="score current-score" >Score: {this.state.currentScore}</span>
+          <span className="score top-score" >Top Score: {this.state.topScore}</span>
+          <span className="controls" >
+            Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
+            Use [SPACE] to SHOOT
+          </span>
+          <canvas ref="canvas"
+            width={this.state.screen.width * this.state.screen.ratio}
+            height={this.state.screen.height * this.state.screen.ratio}
+          />
+        </Animated>
       </div>
     );
   }

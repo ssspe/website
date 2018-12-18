@@ -2,6 +2,10 @@
   background-color: #3e4451;
 }
 
+.home__out {
+  background-color: black !important;
+}
+
 .home__title {
   position: fixed;
   pointer-events: none;
@@ -11,6 +15,45 @@
   bottom:0;
   width:100%;
   height: 92vh;
+  z-index: 10;
+}
+
+.home__title-hidden {
+  position: fixed;
+  pointer-events: none;
+  left:0px;
+  right:0;
+  top:0;
+  bottom:0;
+  width:100%;
+  height: 92vh;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.animation__helper {
+  position: fixed;
+  pointer-events: none;
+  left:0px;
+  right:0;
+  top:0;
+  bottom:0;
+  width:100%;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.animation__helper-black {
+  position: fixed;
+  pointer-events: none;
+  left:0px;
+  right:0;
+  top:0;
+  bottom:0;
+  width:100%;
+  height: 100vh;
+  background-color: black;
+  transition: background-color 1s linear;
 }
 
 .ship {

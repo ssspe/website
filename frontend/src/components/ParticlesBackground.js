@@ -69,6 +69,7 @@ class ParticlesBackground extends Component {
   render() {
     return (
       <Particles
+        id="particlesBackground"
         className="particle"
         canvasClassName="particle"
         params={ particleParams }/>
